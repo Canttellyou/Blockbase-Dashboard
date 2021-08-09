@@ -1,0 +1,568 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-dark-3;
+
+  .btc {
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+    img {
+      width: 5.5rem;
+    }
+  }
+
+  .navicons {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-items: center;
+    margin-bottom: 12rem;
+
+    @include links;
+    ul {
+      list-style-type: none;
+      :active {
+        @include translate;
+      }
+      li {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        clip-path: circle(40%);
+        margin-top: -1.5rem;
+
+        svg {
+          padding: 1.5rem;
+          width: 6rem;
+          height: 8rem;
+          cursor: pointer;
+
+          &:hover {
+            background-image: $color-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .pic {
+    display: flex;
+    justify-content: center;
+    background-image: url("/images/IMG_1118.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 6rem;
+    height: 6rem;
+    clip-path: circle(50%);
+    @include links-image;
+  }
+  .logout {
+    margin-top: 2.5rem;
+    @include links;
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}
+///For making the grid icon active
+.active,
+.layout {
+  background-image: $color-primary;
+}
+///////////////////////////////////
+
+.content {
+  background-color: $color-dark-1;
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  //TOP PART
+  .top-part {
+    .overview {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .search {
+        flex: 0 0 50%;
+        display: flex;
+      }
+
+      p {
+        margin-left: 4rem;
+        color: $color-gray-light-2;
+        font-weight: 300;
+        font-size: 2rem;
+      }
+
+      input {
+        text-decoration: none;
+        margin-right: -5rem;
+
+        border: none;
+        font-family: "Poppins", sans-serif;
+        background-color: $color-dark-2;
+        padding: 1.5rem 1.2rem;
+        padding-right: 25rem;
+        border-radius: 10px;
+        width: 100%;
+        transition: all 0.2s;
+        &::placeholder {
+          font-weight: 200;
+          color: $color-gray-light-1;
+          font-size: 1.5rem;
+        }
+        &:focus {
+          outline: none;
+        }
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.4);
+      }
+      .mag-glass {
+        border: none;
+        background-color: $color-dark-2;
+        display: inline-block;
+        :focus {
+          outline: none;
+        }
+      }
+    }
+    input,
+    select,
+    textarea {
+      color: $color-white;
+    }
+    .moon {
+      @include links;
+      transform: translateX(-5rem);
+      :active {
+        @include translate;
+      }
+    }
+    .bell {
+      @include links;
+      :active {
+        @include translate;
+      }
+      transform: translateX(-10rem);
+    }
+    .exchange-rate {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-rows: repeat(1);
+      grid-template-columns: repeat(2);
+      grid-column-gap: 5rem;
+      display: flex;
+      justify-content: center;
+      .first-card {
+        animation: flip-one 1s $cubic;
+        padding: 1rem 1rem;
+        padding-left: 2rem;
+        grid-column: 1/2;
+        background-image: $color-primary;
+        border-radius: $cards-border-radius;
+        box-shadow: $box-shadow-cards;
+
+        .market {
+          p {
+            font-size: 2rem;
+            font-weight: 200;
+          }
+        }
+        .rate {
+          display: flex;
+          align-items: center;
+          margin-top: 0.5rem;
+          .bit {
+            img {
+              width: 4rem;
+              height: 4rem;
+            }
+          }
+          .currency {
+            margin-left: 3rem;
+            h2 {
+              font-size: 4.3rem;
+            }
+          }
+          .rate-percent {
+            display: flex;
+            align-items: center;
+            margin-left: 2rem;
+            svg {
+              width: 1.7rem;
+              height: 1.7rem;
+            }
+            .green-text {
+              font-size: 1.8rem;
+              font-weight: 500;
+              color: greenyellow;
+            }
+          }
+        }
+        .update-time {
+          margin-top: 1rem;
+          font-size: 1rem;
+          font-weight: 200;
+          transform: translateX(60%);
+        }
+      }
+      .second-card {
+        animation: flip-two 1s $cubic;
+
+        grid-column: 2/3;
+        background-color: $color-dark-2;
+        padding: 1rem;
+        border-radius: $cards-border-radius;
+        box-shadow: $box-shadow-cards;
+
+        .part {
+          .new-currencies {
+            font-size: 1.5rem;
+            font-weight: 200;
+            color: $color-gray-light-2;
+            opacity: 0.9;
+            word-spacing: 0.1rem;
+            margin-top: 0.5rem;
+          }
+          .currency-list {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+
+            .currency-img {
+              img {
+                width: 3rem;
+                height: 3rem;
+              }
+            }
+            .currency-name {
+              font-size: 1.5rem;
+              font-weight: 300;
+              margin-left: 1rem;
+            }
+            .local-currency {
+              font-size: 2.5rem;
+              background-image: $color-primary;
+              -webkit-background-clip: text;
+              background-clip: text;
+              color: transparent;
+            }
+            .local-1 {
+              margin-left: 5rem;
+            }
+            .local-2 {
+              margin-left: 3.9rem;
+            }
+            .time-added {
+              margin-left: 5rem;
+              color: $color-white;
+              font-weight: 200;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //BOTTOM PART
+  .bottom-part {
+    margin-top: 1.5rem;
+    animation: up 1s $cubic;
+
+    // background-color: $color-dark-2;
+    width: 95%;
+    border-radius: 1rem;
+    box-shadow: 0 5rem 4rem rgba(0, 0, 0, 0.3);
+    align-self: center;
+    padding: 1.5rem;
+
+    .watchlist {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      color: $color-gray-light-2;
+    }
+    .list {
+      display: grid;
+      grid-template-rows: repeat(1);
+      grid-template-columns: 15rem repeat(1, max-content);
+      font-size: 1.7rem;
+      font-weight: 200;
+      margin-top: 2rem;
+      &__1 {
+        color: $color-gray-light-2;
+        opacity: 0.7;
+        font-size: 1.5rem;
+      }
+      &__2 {
+        color: #f7931a;
+      }
+      &__3 {
+        color: #627eea;
+      }
+      &__4 {
+        color: #a5a8a9;
+      }
+      &__5 {
+        color: #8dc351;
+      }
+      .cash-currency {
+        display: flex;
+        margin-left: 4rem;
+
+        .cash-gbp {
+          margin-left: 7rem;
+        }
+        .cash-ghs {
+          margin-left: 8rem;
+        }
+        .cash-eur {
+          margin-left: 9rem;
+        }
+        .cash-ngn {
+          margin-left: 8rem;
+        }
+      }
+      .cash-content {
+        display: flex;
+        grid-column: 2/3;
+        align-items: center;
+
+        & > * {
+          margin-left: 4rem;
+        }
+      }
+      .cash-icon {
+        display: flex;
+        align-items: center;
+        img {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+        .cash-text {
+          margin-left: 1rem;
+        }
+      }
+    }
+    .assets {
+      margin-top: 1.5rem;
+      font-size: 1.7rem;
+      font-weight: 200;
+      text-align: center;
+      a:link,
+      a:visited,
+      a:hover {
+        color: inherit;
+      }
+    }
+  }
+}
+.user-profile {
+  background-color: $color-dark-3;
+  grid-column: 3/4;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  .top-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .big-image {
+      margin-top: 1rem;
+      background-image: url("/images/IMG_1118.jpeg");
+      width: 13rem;
+      height: 13rem;
+      background-size: cover;
+      background-position: center;
+      clip-path: circle(50%);
+      @include links-image;
+      font-size: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .user-name {
+      margin-top: 0.7rem;
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: $color-gray-light-2;
+    }
+    .user-amount {
+      font-size: 3.5rem;
+    }
+    .user-status {
+      margin-top: 1rem;
+      :hover {
+        background-image: $color-primary;
+        border-image: $color-primary;
+      }
+      :active {
+        @include translate;
+      }
+      button {
+        font-size: 1.4rem;
+        font-weight: 200;
+        font-family: inherit;
+        text-decoration: none;
+        background-color: $color-dark-3;
+        border: none;
+        border: 1px solid $color-gray-light-2;
+        padding: 0.2rem 2rem;
+
+        @include links;
+        a:link,
+        a:visited,
+        a:hover {
+          color: $color-gray-light-2;
+        }
+      }
+    }
+  }
+  .bottom-side {
+    margin-top: 1rem;
+    width: 88%;
+    align-self: center;
+
+    .transactions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .text {
+        font-size: 2rem;
+        font-weight: 300;
+        color: $color-gray-light-2;
+      }
+      .arrows {
+        @include translate;
+
+        :not(:last-child) {
+          margin-right: 1.5rem;
+        }
+
+        button {
+          text-decoration: none;
+          border: none;
+          color: inherit;
+          border-radius: 3px;
+          background-color: $color-dark-2;
+          padding: 0.3rem;
+          @include links;
+          svg {
+            width: 1.2rem;
+            height: 1.2rem;
+          }
+        }
+      }
+    }
+    .multi-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      :hover {
+        background-image: $color-primary;
+        border: none;
+      }
+      :active {
+        @include translate;
+      }
+      button {
+        text-decoration: none;
+        border: 1px solid $color-white;
+        color: inherit;
+        background: inherit;
+        font-size: 1.2rem;
+        font-weight: 200;
+        font-family: inherit;
+        padding: 0.2rem 2rem;
+        border-radius: 20px;
+        @include links;
+      }
+      .active,
+      .all-button {
+        background-image: $color-primary;
+        border: none;
+      }
+    }
+    .list {
+      margin-top: 2.5rem;
+      display: flex;
+      background-color: $color-dark-2;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      .success1 {
+        color: rgb(73, 148, 106);
+      }
+      .success2 {
+        margin-left: 2rem;
+      }
+      .success {
+        margin-top: 0.7rem;
+        .receivers-img {
+          margin-left: 0.7rem;
+        }
+        .img {
+          width: 3rem;
+          height: 3rem;
+          background-image: url("/images/IMG_1118.jpeg");
+          background-size: 100%;
+          background-position: center;
+          border-radius: 50%;
+          align-self: center;
+        }
+        .text {
+          margin-top: 0.8rem;
+          font-size: 0.8rem;
+          font-family: 200;
+        }
+      }
+      .arrowicon {
+        align-self: center;
+        margin-left: 1rem;
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+      .amount-sent {
+        margin-left: 2rem;
+        font-size: 3.3rem;
+        font-family: 500;
+      }
+      .receivers-img {
+        width: 3rem;
+        height: 3rem;
+        background-image: url("/images/IMG_20210226_195145_298.jpg");
+        background-size: 100%;
+        background-position: center;
+        border-radius: 50%;
+      }
+    }
+    .three-buttons {
+      margin-top: 4rem;
+      :hover {
+        background-color: $color-white;
+      }
+      .active,
+      .btn-1 {
+        background-color: $color-white;
+      }
+      text-align: center;
+      & > * {
+        margin-left: 2rem;
+      }
+      button {
+        @include links-image;
+        width: 6px;
+        height: 6px;
+        background-color: inherit;
+        border: 1px solid $color-white;
+        border-radius: 50%;
+      }
+    }
+  }
+}
