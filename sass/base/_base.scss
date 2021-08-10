@@ -92,11 +92,12 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 
   display: grid;
-  grid-template-rows: 100vh;
-  grid-template-columns: 10rem 1fr 27vw;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: 10rem 1fr 36rem;
 
   color: $color-white;
 }
