@@ -477,7 +477,8 @@ body {
         .user-profile .bottom-side .list .success .text {
           margin-top: 0.8rem;
           font-size: 0.8rem;
-          font-family: 200; }
+          font-family: 200;
+          display: flex; }
       .user-profile .bottom-side .list .arrowicon {
         align-self: center;
         margin-left: 1rem; }
